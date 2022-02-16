@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         // Check for existing Google Sign In account, if the user is already signed in
-// the GoogleSignInAccount will be non-null.
+        // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         findViewById(R.id.sign_in_button).setOnClickListener(this);
 
@@ -79,5 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void updateUI(GoogleSignInAccount account) {
         Log.i(TAG, "updateUI: account: " + account.getEmail());
         // TODO: Start the home activity
+        Intent intent = new Intent(this, BottomNavigationActivity.class);
+        startActivity(intent);
     }
 }
