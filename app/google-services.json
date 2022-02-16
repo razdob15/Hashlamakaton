@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "191372481343",
+    "project_id": "easygive-7327b",
+    "storage_bucket": "easygive-7327b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191372481343:android:4be184ceab7c6507ae398a",
+        "android_client_info": {
+          "package_name": "com.example.easygive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191372481343-b91o7upm289p16afl8t0tgv6r22lu2o3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.easygive",
+            "certificate_hash": "38d1e14642cc6a2463c36674cd061c9f2063ebc8"
+          }
+        },
+        {
+          "client_id": "191372481343-1j9fqffkuv4uk1d3hf9bpvd6sqidc7fl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUMGP2nTVwX34ue8bf78W89B1TZ_3QJVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191372481343-1j9fqffkuv4uk1d3hf9bpvd6sqidc7fl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
