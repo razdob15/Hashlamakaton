@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthOptions;
 
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
@@ -22,15 +23,18 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         mAuth = FirebaseAuth.getInstance();
-        setupUI();
+        setupUI(savedInstanceState);
     }
 
-    private void setupUI() {
+    private void setupUI(Bundle bundle) {
         final EditText emailET = findViewById(R.id.email_et);
         final EditText passwordET = findViewById(R.id.password_et);
         final EditText repasswordET = findViewById(R.id.re_password_et);
         Button loginBtn = findViewById(R.id.login_btn);
         Button signupBtn = findViewById(R.id.signup_btn);
+
+        Bundle bundle2 = getIntent().getExtras();
+        emailET.setText(bundle2.getString("email"));
 
         loginBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this, LoginActivity.class);
@@ -97,7 +101,9 @@ public class SignupActivity extends AppCompatActivity {
     private void nextActivity() {
         Intent intent = new Intent(this, PreferencesActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
+        if (mAuth.getCurrentUser() != null) {
+            intent.putExtra("email",  mAuth.getCurrentUser().getEmail());
+        }
         startActivity(intent);
     }
 
