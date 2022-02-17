@@ -82,7 +82,7 @@ public class PreferencesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 vonlteer.setName(savedInstanceState.getString("name"));
-                vonlteer.setEmail(savedInstanceState.getString("email"));
+                vonlteer.setEmail(savedInstanceState.getString( "email"));
                 vonlteer.setPoints(0);
                 vonlteer.setPreferences(prefs);
                 databaseReference.setValue(vonlteer);
