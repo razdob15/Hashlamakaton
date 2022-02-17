@@ -43,10 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         signupBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this, SignupActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            Bundle bundle = new Bundle();
-            bundle.putString("email", emailET.getText().toString());
             startActivity(intent);
-
         });
     }
 

@@ -78,17 +78,14 @@ public class PreferencesActivity extends AppCompatActivity {
         });
 
         Button nextButton = findViewById(R.id.textButton);
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                vonlteer.setName(savedInstanceState.getString("name"));
-                vonlteer.setEmail(savedInstanceState.getString( "email"));
-                vonlteer.setPoints(0);
-                vonlteer.setPreferences(prefs);
-                databaseReference.setValue(vonlteer);
-                Intent intent = new Intent(view.getContext(), BottomNavigationActivity.class);
-                startActivity(intent);
-            }
+        nextButton.setOnClickListener(view -> {
+            vonlteer.setName(savedInstanceState.getString("name"));
+            vonlteer.setEmail(savedInstanceState.getString( "email"));
+            vonlteer.setPoints(0);
+            vonlteer.setPreferences(prefs);
+            databaseReference.setValue(vonlteer);
+            Intent intent = new Intent(view.getContext(), BottomNavigationActivity.class);
+            startActivity(intent);
         });
     }
 
