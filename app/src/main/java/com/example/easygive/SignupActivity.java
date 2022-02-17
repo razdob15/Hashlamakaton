@@ -22,15 +22,17 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         mAuth = FirebaseAuth.getInstance();
-        setupUI();
+        setupUI(savedInstanceState);
     }
 
-    private void setupUI() {
+    private void setupUI(Bundle bundle) {
         final EditText emailET = findViewById(R.id.email_et);
         final EditText passwordET = findViewById(R.id.password_et);
         final EditText repasswordET = findViewById(R.id.re_password_et);
         Button loginBtn = findViewById(R.id.login_btn);
         Button signupBtn = findViewById(R.id.signup_btn);
+
+        emailET.setText(bundle.getString("email"));
 
         loginBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this, LoginActivity.class);
