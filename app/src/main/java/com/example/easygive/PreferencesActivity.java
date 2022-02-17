@@ -59,12 +59,9 @@ public class PreferencesActivity extends AppCompatActivity {
 
 
         Button nextButton = findViewById(R.id.textButton);
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), MainActivity.class);
-                startActivity(intent);
-            }
+        nextButton.setOnClickListener(view -> {
+            Intent intent = new Intent(view.getContext(), BottomNavigationActivity.class);
+            startActivity(intent);
         });
 
 

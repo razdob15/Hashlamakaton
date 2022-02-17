@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthOptions;
 
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
@@ -99,8 +100,11 @@ public class SignupActivity extends AppCompatActivity {
     private void nextActivity() {
         Intent intent = new Intent(this, PreferencesActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-        startActivity(intent);
+        Bundle bundle = new Bundle();
+        if (mAuth.getCurrentUser() != null) {
+            bundle.putString("email", mAuth.getCurrentUser().getEmail());
+        }
+        startActivity(intent, bundle);
     }
 
     private void updateUI(FirebaseUser currentUser) {
