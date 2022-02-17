@@ -11,13 +11,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="330dp"
+        android:layout_height="378dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.148"
+        app:layout_constraintVertical_bias="0.141"
         app:srcCompat="@drawable/latet" />
 
     <EditText
@@ -29,8 +30,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.605" />
 
     <EditText
         android:id="@+id/phone_tv"
@@ -43,7 +44,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email_et"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintVertical_bias="0"
+        android:textAlignment="viewStart"/>
 
     <EditText
         android:id="@+id/password_et"
@@ -56,32 +58,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/phone_tv"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintVertical_bias="0"
+        android:textAlignment="viewStart"/>
 
     <EditText
         android:id="@+id/re_password_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:hint="סיסמה שוב :)"
+        android:hint="ושוב הסיסמה"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password_et"
-        app:layout_constraintVertical_bias="0" />
+        app:layout_constraintVertical_bias="0"
+        android:textAlignment="viewStart"/>
 
 
     <Button
         android:id="@+id/login_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="290px"
         android:layout_height="wrap_content"
         android:text="להתחברות"
         app:layout_constraintBottom_toBottomOf="@id/login_tv"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/login_tv" />
-
+        app:layout_constraintTop_toTopOf="@id/login_tv"
+        app:layout_constraintVertical_bias="0.586" />
 
     <TextView
         android:id="@+id/login_tv"
@@ -90,19 +95,22 @@
         android:text="כבר רשום?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signup_btn" />
+        app:layout_constraintTop_toBottomOf="@id/signup_btn"
+        app:layout_constraintVertical_bias="0.263" />
 
     <Button
         android:id="@+id/signup_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="290px"
         android:layout_height="wrap_content"
         android:text="הרשמה"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_et" />
+        app:layout_constraintTop_toBottomOf="@id/password_et"
+        app:layout_constraintVertical_bias="0.512" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
