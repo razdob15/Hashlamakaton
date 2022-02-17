@@ -43,7 +43,8 @@ public class LoginActivity extends AppCompatActivity {
         signupBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this, SignupActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
+            Bundle bundle = new Bundle();
+            bundle.putString("email", emailET.getText().toString());
             startActivity(intent);
 
         });
@@ -73,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithEmail:failure", task.getException());
-                        Toast.makeText(this, "User does not exist", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "המשתמש אינו קיים, נסו להירשם :)", Toast.LENGTH_LONG).show();
                     }
                 });
     }
