@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class MissionsAdapter extends BaseAdapter {
     private final Context context;
-    private ArrayList<Mission> arrayList;
+    private final ArrayList<Mission> arrayList;
 
     public MissionsAdapter(Context context, ArrayList<Mission> arrayList) {
         this.context = context;
