@@ -65,21 +65,15 @@ public class LoginActivity extends AppCompatActivity {
 
     private void signIn(String email, String password) {
         if (email == null || password == null) {
-            Toast t = new Toast(this);
-            t.setText("Please fill the fields");
-            t.show();
+            Toast.makeText(this,"Please fill the fields", Toast.LENGTH_LONG).show();
             return;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast t = new Toast(this);
-            t.setText("Email is invalid");
-            t.show();
+            Toast.makeText(this,"Email is invalid", Toast.LENGTH_LONG).show();
             return;
         }
         if (password.length() < 8) {
-            Toast t = new Toast(this);
-            t.setText("Password must contains 8 chars");
-            t.show();
+            Toast.makeText(this,"Password must contains 8 chars", Toast.LENGTH_LONG).show();
             return;
         }
 
