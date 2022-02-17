@@ -10,10 +10,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.easygive.models.Volunteer;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class PreferencesActivity extends AppCompatActivity {
 
@@ -27,76 +29,59 @@ public class PreferencesActivity extends AppCompatActivity {
 
         DatabaseReference databaseReference = firebaseDatabase.getReference("users");
 
-        vonlteer = new Volunteer();
+        vonlteer = new Volunteer(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
 
-        ArrayList<String> prefs = new ArrayList<String>();
+        ArrayList<String> prefs = new ArrayList<>();
 
         ImageView grandpa = findViewById(R.id.profile_image);
-        grandpa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                darkenImage(grandpa);
-                prefs.add("old");
-            }
+        grandpa.setOnClickListener(view -> {
+            darkenImage(grandpa);
+            prefs.add("מבוגרים");
         });
 
         ImageView devide = findViewById(R.id.profile_image2);
-        devide.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                darkenImage(devide);
-                prefs.add("devide");
-            }
+        devide.setOnClickListener(view -> {
+            darkenImage(devide);
+            prefs.add("חלוקת מזון");
         });
 
         ImageView field = findViewById(R.id.profile_image3);
-        field.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                darkenImage(field);
-                prefs.add("save");
-            }
+        field.setOnClickListener(view -> {
+            darkenImage(field);
+            prefs.add("הצלת מזון בחקלאות");
         });
 
         ImageView supermarket = findViewById(R.id.profile_image5);
-        supermarket.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                darkenImage(supermarket);
-                prefs.add("gather");
-            }
+        supermarket.setOnClickListener(view -> {
+            darkenImage(supermarket);
+            prefs.add("איסוף מזון");
         });
 
         ImageView teens = findViewById(R.id.profile_image4);
-        teens.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                darkenImage(teens);
-                prefs.add("teens");
-            }
+        teens.setOnClickListener(view -> {
+            darkenImage(teens);
+            prefs.add("נוער");
         });
 
         Button nextButton = findViewById(R.id.textButton);
         nextButton.setOnClickListener(view -> {
             Bundle bundle2 = getIntent().getExtras();
-            int iend = bundle2.getString( "email").indexOf("@");
+            int iend = bundle2.getString("email").indexOf("@");
             String subString = "";
-            if (iend != -1)
-            {
-                subString= bundle2.getString( "email").substring(0 , iend); //this will give abc
+            if (iend != -1) {
+                subString = bundle2.getString("email").substring(0, iend); //this will give abc
             }
             vonlteer.setName(subString);
-            vonlteer.setEmail(bundle2.getString( "email"));
+            vonlteer.setEmail(bundle2.getString("email"));
             vonlteer.setPoints(0);
             vonlteer.setPreferences(prefs);
-            databaseReference.setValue(vonlteer);
+            databaseReference.child(vonlteer.getId()).setValue(vonlteer);
             Intent intent = new Intent(view.getContext(), BottomNavigationActivity.class);
             startActivity(intent);
         });
     }
 
-    private void darkenImage(ImageView imageView)
-    {
+    private void darkenImage(ImageView imageView) {
         imageView.setColorFilter(Color.rgb(123, 123, 123), android.graphics.PorterDuff.Mode.MULTIPLY);
     }
 }
