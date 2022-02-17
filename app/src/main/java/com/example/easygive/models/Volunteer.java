@@ -1,5 +1,7 @@
 package com.example.easygive.models;
 
+import java.util.ArrayList;
+
 public class Volunteer {
     public String getName() {
         return name;
@@ -19,34 +21,11 @@ public class Volunteer {
 
     private String phone;
 
-    private String points;
+    private Integer points;
 
-    private String [] preferences;
+    private ArrayList<String> preferences;
 
-    public Volunteer(String name, String area, String city, String email, String phone, String points, String[] prefernces) {
-        this.name = name;
-        this.area = area;
-        this.city = city;
-        this.email = email;
-        this.phone = phone;
-        this.points = points;
-        this.preferences = prefernces;
-    }
-
-    public String getArea() {
-        return area;
-    }
-
-    public void setArea(String area) {
-        this.area = area;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
+    public Volunteer(){
     }
 
     public String getEmail() {
@@ -57,27 +36,19 @@ public class Volunteer {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getPoints() {
+    public Integer getPoints() {
         return points;
     }
 
-    public void setPoints(String points) {
+    public void setPoints(Integer points) {
         this.points = points;
     }
 
-    public String[] getPreferences() {
+    public ArrayList<String> getPreferences() {
         return preferences;
     }
 
-    public void setPreferences(String[] preferences) {
+    public void setPreferences(ArrayList preferences) {
         this.preferences = preferences;
     }
 }
