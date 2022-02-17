@@ -78,8 +78,15 @@ public class PreferencesActivity extends AppCompatActivity {
 
         Button nextButton = findViewById(R.id.textButton);
         nextButton.setOnClickListener(view -> {
-            vonlteer.setName(savedInstanceState.getString("name"));
-            vonlteer.setEmail(savedInstanceState.getString( "email"));
+            Bundle bundle2 = getIntent().getExtras();
+            int iend = bundle2.getString( "email").indexOf("@");
+            String subString = "";
+            if (iend != -1)
+            {
+                subString= bundle2.getString( "email").substring(0 , iend); //this will give abc
+            }
+            vonlteer.setName(subString);
+            vonlteer.setEmail(bundle2.getString( "email"));
             vonlteer.setPoints(0);
             vonlteer.setPreferences(prefs);
             databaseReference.setValue(vonlteer);

@@ -101,11 +101,10 @@ public class SignupActivity extends AppCompatActivity {
     private void nextActivity() {
         Intent intent = new Intent(this, PreferencesActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        Bundle bundle = new Bundle();
         if (mAuth.getCurrentUser() != null) {
-            bundle.putString("email", mAuth.getCurrentUser().getEmail());
+            intent.putExtra("email",  mAuth.getCurrentUser().getEmail());
         }
-        startActivity(intent, bundle);
+        startActivity(intent);
     }
 
     private void updateUI(FirebaseUser currentUser) {
