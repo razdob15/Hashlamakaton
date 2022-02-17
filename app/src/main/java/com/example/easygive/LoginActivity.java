@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         });
         signupBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this, SignupActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.putExtra("email",  emailET.getText().toString());
             startActivity(intent);
         });
     }
@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void nextActivity() {
-        Intent intent = new Intent(this, PreferencesActivity.class);
+        Intent intent = new Intent(this, BottomNavigationActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         startActivity(intent);

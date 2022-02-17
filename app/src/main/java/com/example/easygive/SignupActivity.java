@@ -33,7 +33,8 @@ public class SignupActivity extends AppCompatActivity {
         Button loginBtn = findViewById(R.id.login_btn);
         Button signupBtn = findViewById(R.id.signup_btn);
 
-        emailET.setText(bundle.getString("email"));
+        Bundle bundle2 = getIntent().getExtras();
+        emailET.setText(bundle2.getString("email"));
 
         loginBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this, LoginActivity.class);
