@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithEmail:failure", task.getException());
-                        Toast.makeText(this, "User does not exist", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "המשתמש אינו קיים, נסו להירשם :)", Toast.LENGTH_LONG).show();
                     }
                 });
     }
