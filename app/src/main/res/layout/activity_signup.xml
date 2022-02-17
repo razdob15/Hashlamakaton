@@ -33,6 +33,19 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <EditText
+        android:id="@+id/phone_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:hint="טלפון"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_et"
+        app:layout_constraintVertical_bias="0" />
+
+    <EditText
         android:id="@+id/password_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,41 +55,54 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/email_et"
+        app:layout_constraintTop_toBottomOf="@id/phone_tv"
         app:layout_constraintVertical_bias="0" />
+
+    <EditText
+        android:id="@+id/re_password_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:hint="סיסמה שוב :)"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_et"
+        app:layout_constraintVertical_bias="0" />
+
 
     <Button
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="התחברות"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="להתחברות"
+        app:layout_constraintBottom_toBottomOf="@id/login_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_et" />
+        app:layout_constraintTop_toTopOf="@id/login_tv" />
 
 
     <TextView
-        android:id="@+id/signup_tv"
+        android:id="@+id/login_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="אין לך יוזר?"
-        app:layout_constraintHorizontal_bias="0.2"
+        android:text="כבר רשום?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_btn" />
-
+        app:layout_constraintTop_toBottomOf="@id/signup_btn" />
 
     <Button
         android:id="@+id/signup_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="הרשמה"
-        app:layout_constraintBottom_toBottomOf="@id/signup_tv"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/signup_tv"/>
+        app:layout_constraintTop_toBottomOf="@id/password_et" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
